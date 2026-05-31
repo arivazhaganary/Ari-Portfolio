@@ -1,0 +1,1078 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Arivazhagan P | XR & Game Developer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#050505;
+    --card:#0f1117;
+    --text:#ffffff;
+    --muted:#9ca3af;
+    --accent:#7df9ff;
+    --accent2:#9b7dff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:white;
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+.bg{
+    position:fixed;
+    inset:0;
+    z-index:-10;
+    background:
+    radial-gradient(circle at top left, rgba(125,249,255,0.14), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(155,125,255,0.16), transparent 35%),
+    linear-gradient(to bottom,#030303,#07070c);
+}
+
+.grid{
+    position:fixed;
+    inset:0;
+    z-index:-9;
+    background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size:70px 70px;
+    mask-image:radial-gradient(circle at center, black 20%, transparent 100%);
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:24px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    backdrop-filter:blur(20px);
+    background:rgba(0,0,0,0.25);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.logo{
+    font-family:'Outfit',sans-serif;
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:5px;
+}
+
+.logo span{
+    color:var(--accent);
+}
+
+.nav-links{
+    display:flex;
+    gap:34px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#d1d5db;
+    transition:0.3s;
+    font-size:14px;
+}
+
+.nav-links a:hover{
+    color:var(--accent);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:0 7%;
+}
+
+.hero-content{
+    max-width:1200px;
+}
+
+.hero-small{
+    color:var(--accent);
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:25px;
+    font-size:13px;
+}
+
+.hero h1{
+    font-family:'Outfit',sans-serif;
+    font-size:120px;
+    line-height:0.9;
+    letter-spacing:-6px;
+    margin-bottom:30px;
+}
+
+.gradient{
+    background:linear-gradient(to right,var(--accent),var(--accent2));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    color:var(--muted);
+    line-height:2;
+    font-size:20px;
+    max-width:900px;
+    margin-bottom:50px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:18px 30px;
+    border-radius:18px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.primary{
+    background:linear-gradient(to right,var(--accent),var(--accent2));
+    color:black;
+}
+
+.secondary{
+    border:1px solid rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.03);
+    color:white;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+/* SECTION */
+
+section{
+    padding:140px 7%;
+}
+
+.section-title{
+    font-family:'Outfit',sans-serif;
+    font-size:72px;
+    line-height:0.95;
+    letter-spacing:-4px;
+    margin-bottom:25px;
+}
+
+.section-sub{
+    color:var(--muted);
+    font-size:18px;
+    line-height:2;
+    max-width:850px;
+    margin-bottom:80px;
+}
+
+/* PROJECTS */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+    gap:30px;
+}
+
+.project{
+    background:
+    linear-gradient(145deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.015));
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:34px;
+    overflow:hidden;
+    padding:35px;
+    transition:0.4s;
+}
+
+.project:hover{
+    transform:translateY(-10px);
+    border-color:rgba(125,249,255,0.3);
+}
+
+.featured{
+    border:1px solid rgba(125,249,255,0.35);
+    box-shadow:0 0 40px rgba(125,249,255,0.08);
+}
+
+.project-number{
+    color:var(--accent);
+    font-size:13px;
+    letter-spacing:3px;
+    margin-bottom:20px;
+}
+
+.award-badge{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:100px;
+    background:linear-gradient(to right,var(--accent),var(--accent2));
+    color:black;
+    font-weight:700;
+    font-size:12px;
+    margin-bottom:24px;
+}
+
+.project-media{
+    position:relative;
+    height:240px;
+    overflow:hidden;
+    border-radius:24px;
+    margin-bottom:30px;
+}
+
+.project-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.video-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:flex-end;
+    padding:24px;
+    background:linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.1));
+}
+
+.watch-btn{
+    padding:14px 22px;
+    border-radius:100px;
+    text-decoration:none;
+    color:white;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.08);
+    font-size:14px;
+}
+
+.project h3{
+    font-family:'Outfit',sans-serif;
+    font-size:36px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.project p{
+    color:var(--muted);
+    line-height:1.9;
+    margin-bottom:30px;
+}
+
+.tech{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.tech span{
+    padding:10px 16px;
+    border-radius:100px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    font-size:13px;
+}
+
+/* EXPERTISE */
+
+.expertise-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.expertise{
+    background:
+    linear-gradient(145deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.015));
+    border:1px solid rgba(255,255,255,0.08);
+    padding:40px;
+    border-radius:28px;
+}
+
+.expertise h4{
+    font-family:'Outfit',sans-serif;
+    font-size:28px;
+    margin-bottom:18px;
+}
+
+.expertise p{
+    color:var(--muted);
+    line-height:1.9;
+}
+
+/* EXPERIENCE */
+
+.timeline{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+.timeline-item{
+    background:
+    linear-gradient(145deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.015));
+    border:1px solid rgba(255,255,255,0.08);
+    padding:45px;
+    border-radius:30px;
+}
+
+.timeline-year{
+    color:var(--accent);
+    font-size:13px;
+    letter-spacing:3px;
+    margin-bottom:18px;
+}
+
+.timeline-item h3{
+    font-family:'Outfit',sans-serif;
+    font-size:34px;
+    margin-bottom:20px;
+}
+
+.timeline-item p{
+    color:var(--muted);
+    line-height:2;
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+}
+
+.contact h2{
+    font-family:'Outfit',sans-serif;
+    font-size:100px;
+    line-height:0.9;
+    letter-spacing:-5px;
+    margin-bottom:30px;
+}
+
+.contact p{
+    max-width:850px;
+    margin:auto;
+    color:var(--muted);
+    line-height:2;
+    font-size:20px;
+    margin-bottom:60px;
+}
+
+footer{
+    padding:40px;
+    text-align:center;
+    color:#777;
+    border-top:1px solid rgba(255,255,255,0.05);
+}
+
+@media(max-width:1100px){
+
+.hero{
+    padding-top:120px;
+}
+
+.hero h1{
+    font-size:72px;
+}
+
+.section-title{
+    font-size:52px;
+}
+
+.contact h2{
+    font-size:56px;
+}
+
+.nav-links{
+    display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="grid"></div>
+
+<nav>
+
+<a href="#" class="logo" style="text-decoration:none; color:white;">
+    ARIVA<span>ZHAGAN</span>
+</a>
+
+<div class="nav-links">
+<a href="#projects">Projects</a>
+<a href="#expertise">Expertise</a>
+<a href="#experience">Experience</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-small">
+XR ENGINEER • GAME DEVELOPER • MULTIPLAYER SYSTEMS ARCHITECT
+</div>
+
+<h1>
+Creating
+<span class="gradient">Immersive</span>
+Digital Worlds
+</h1>
+
+<p>
+Lead Unity Developer with 8+ years of experience building AAA-quality XR applications,
+multiplayer VR platforms, industrial simulations, mobile games,
+AI-powered immersive systems, and scalable real-time experiences.
+Specialized in Unity3D, VR/AR, multiplayer networking,
+optimization, and immersive interaction systems.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#projects" class="btn primary">
+Explore Projects
+</a>
+
+<a href="mailto:arivazhagan30071997@gmail.com" class="btn secondary">
+Contact Me
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="section-title">
+Featured
+Projects
+</h2>
+
+<p class="section-sub">
+A curated collection of immersive XR systems, multiplayer platforms,
+industrial simulations, medical VR experiences,
+and enterprise-scale real-time applications.
+</p>
+
+<div class="projects">
+
+<div class="project featured">
+
+<div class="project-number">
+01 — METAVERSE PLATFORM
+</div>
+
+<div class="award-badge">
+🏆 DRUM AWARDS METAVERSE FINALIST 2023
+</div>
+
+<h3>
+Award Finalist
+Metaverse Platform
+</h3>
+
+<p>
+Built a large-scale VR multiplayer metaverse platform using Unity3D and PlayFab,
+integrating RESTful APIs for cloud-driven player management,
+real-time synchronization,
+and scalable immersive social interaction systems.
+</p>
+
+<div class="tech">
+<span>Unity3D</span>
+<span>PlayFab</span>
+<span>REST APIs</span>
+<span>Metaverse</span>
+<span>Multiplayer</span>
+</div>
+
+</div>
+
+<div class="project">
+
+<div class="project-number">
+02 — FREE ROAM VR
+</div>
+
+<div class="project-media">
+
+<img src="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?q=80&w=1400&auto=format&fit=crop">
+
+<div class="video-overlay">
+
+<a class="watch-btn"
+href="https://www.youtube.com/watch?v=LrkJrRe7jvk"
+target="_blank">
+
+▶ Watch Gameplay Demo
+
+</a>
+
+</div>
+
+</div>
+
+<h3>
+Free-Roam
+VR Multiplayer Platform
+</h3>
+
+<p>
+Contributed to one of India’s first immersive free-roam multiplayer VR experiences,
+focused on synchronized gameplay systems and immersive interaction.
+</p>
+
+<div class="tech">
+<span>Unity3D</span>
+<span>Photon</span>
+<span>VR Gaming</span>
+</div>
+
+</div>
+
+<div class="project">
+
+<div class="project-number">
+03 — INDUSTRIAL SIMULATION
+</div>
+
+<div class="project-media">
+
+<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1400&auto=format&fit=crop">
+
+<div class="video-overlay">
+
+<a class="watch-btn"
+href="https://www.youtube.com/watch?v=sqoPs1sNXmk"
+target="_blank">
+
+▶ Watch Simulation Demo
+
+</a>
+
+</div>
+
+</div>
+
+<h3>
+Engine Assembly
+Training Simulation
+</h3>
+
+<p>
+Developed immersive engine assembly training simulations
+for industrial learning and procedural training systems.
+</p>
+
+<div class="tech">
+<span>Unity3D</span>
+<span>Industrial XR</span>
+<span>Simulation</span>
+</div>
+
+</div>
+
+<div class="project">
+
+<div class="project-number">
+04 — MOBILE GAMING
+</div>
+
+<div class="project-media">
+
+<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1400&auto=format&fit=crop">
+
+<div class="video-overlay">
+
+<a class="watch-btn"
+href="https://youtube.com/shorts/UBF0HasYiEk?feature=share"
+target="_blank">
+
+▶ Watch Mobile Gameplay
+
+</a>
+
+</div>
+
+</div>
+
+<h3>
+Velocity Rush
+Infinite Runner
+</h3>
+
+<p>
+Developed a fast-paced endless runner mobile game
+focused on responsive gameplay,
+dynamic obstacle systems,
+and addictive progression mechanics.
+</p>
+
+<div class="tech">
+<span>Unity3D</span>
+<span>Android</span>
+<span>Mobile Game</span>
+</div>
+
+</div>
+
+<div class="project">
+
+<div class="project-number">
+05 — HORROR EXPERIENCE
+</div>
+
+<div class="project-media">
+
+<img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1400&auto=format&fit=crop">
+
+<div class="video-overlay">
+
+<a class="watch-btn"
+href="https://youtu.be/YB2W_i1n4kw"
+target="_blank">
+
+▶ Watch Horror Gameplay
+
+</a>
+
+</div>
+
+</div>
+
+<h3>
+Wrath Of Phantom
+VR Horror Experience
+</h3>
+
+<p>
+Developed immersive horror gameplay experiences
+with atmospheric storytelling,
+psychological tension,
+and cinematic VR interactions.
+</p>
+
+<div class="tech">
+<span>VR Horror</span>
+<span>Gameplay Systems</span>
+<span>Immersive Design</span>
+</div>
+
+</div>
+
+<div class="project">
+
+<div class="project-number">
+06 — QUEST NETWORKING
+</div>
+
+<h3>
+Quest Sync
+Arcade System
+</h3>
+
+<p>
+Created synchronized multiplayer VR systems
+for multiple Oculus Quest devices using Mirror Networking.
+</p>
+
+<div class="tech">
+<span>Mirror Networking</span>
+<span>Quest</span>
+<span>VR Arcade</span>
+</div>
+
+</div>
+
+<div class="project">
+
+<div class="project-number">
+07 — AUTHENTICATION SYSTEM
+</div>
+
+<h3>
+Quest Frontloader
+Authentication Platform
+</h3>
+
+<p>
+Built secure authentication and game-loading systems
+for Oculus Quest devices using RESTful APIs.
+</p>
+
+<div class="tech">
+<span>REST APIs</span>
+<span>Unity3D</span>
+<span>Quest</span>
+</div>
+
+</div>
+
+<div class="project">
+
+<div class="project-number">
+08 — INDUSTRIAL XR
+</div>
+
+<h3>
+Industrial
+Simulation Framework
+</h3>
+
+<p>
+Designed reusable VR training modules and scalable interaction systems
+for enterprise industrial simulations.
+</p>
+
+<div class="tech">
+<span>Industrial XR</span>
+<span>Simulation</span>
+<span>Training</span>
+</div>
+
+</div>
+
+<div class="project">
+
+<div class="project-number">
+09 — MEDICAL XR
+</div>
+
+<h3>
+Eye Cataract
+Surgery Simulator
+</h3>
+
+<p>
+Worked on VR eye cataract surgery simulations
+using TouchX haptics for immersive medical training.
+</p>
+
+<div class="tech">
+<span>Medical XR</span>
+<span>TouchX</span>
+<span>Simulation</span>
+</div>
+
+</div>
+
+<div class="project">
+
+<div class="project-number">
+10 — HEALTHCARE VR
+</div>
+
+<h3>
+COVID Prevention
+VR Training
+</h3>
+
+<p>
+Created immersive VR healthcare training modules
+for doctors and healthcare professionals.
+</p>
+
+<div class="tech">
+<span>Healthcare VR</span>
+<span>Training</span>
+<span>Grant Funded</span>
+</div>
+
+</div>
+
+<div class="project">
+
+<div class="project-number">
+11 — FASHION TECH
+</div>
+
+<h3>
+Virtual Cloth
+Simulation App
+</h3>
+
+<p>
+Developed a virtual clothing and avatar customization system
+with Firebase backend integration.
+</p>
+
+<div class="tech">
+<span>Unity3D</span>
+<span>Firebase</span>
+<span>Avatar System</span>
+</div>
+
+</div>
+
+<div class="project">
+
+<div class="project-number">
+12 — 360° IMMERSIVE EXPERIENCE
+</div>
+
+<div class="project-media">
+
+<img src="https://images.unsplash.com/photo-1526948531399-320e7e40f0ca?q=80&w=1400&auto=format&fit=crop">
+
+</div>
+
+<h3>
+360° Virtual
+Immersive Experience
+</h3>
+
+<p>
+Developed immersive 360-degree interactive experiences
+for VR headsets and cinematic storytelling environments,
+focused on immersive media workflows and interaction systems.
+</p>
+
+<div class="tech">
+<span>360 Video</span>
+<span>VR Experience</span>
+<span>Immersive Media</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="expertise">
+
+<h2 class="section-title">
+Core
+Expertise
+</h2>
+
+<p class="section-sub">
+Combining gameplay engineering with enterprise XR architecture,
+focused on immersive interaction systems,
+multiplayer scalability,
+and performance optimization.
+</p>
+
+<div class="expertise-grid">
+
+<div class="expertise">
+<h4>Gameplay Engineering</h4>
+<p>
+Gameplay systems, interaction mechanics,
+immersive player experiences,
+and scalable game architecture.
+</p>
+</div>
+
+<div class="expertise">
+<h4>XR Development</h4>
+<p>
+Enterprise VR simulations,
+Oculus Quest optimization,
+and immersive interaction systems.
+</p>
+</div>
+
+<div class="expertise">
+<h4>Multiplayer Systems</h4>
+<p>
+Networking architecture using Photon,
+Mirror Networking,
+PlayFab,
+and RESTful integrations.
+</p>
+</div>
+
+<div class="expertise">
+<h4>Optimization</h4>
+<p>
+CPU/GPU optimization,
+rendering pipelines,
+memory management,
+and FPS stability.
+</p>
+</div>
+
+<div class="expertise">
+<h4>Technical Leadership</h4>
+<p>
+Engineering leadership,
+workflow optimization,
+mentoring,
+and scalable architecture planning.
+</p>
+</div>
+
+<div class="expertise">
+<h4>Game Architecture</h4>
+<p>
+Production-grade modular systems,
+reusable frameworks,
+and scalable engineering patterns.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="experience">
+
+<h2 class="section-title">
+Experience
+Journey
+</h2>
+
+<p class="section-sub">
+A journey through immersive technology,
+multiplayer systems,
+game development,
+and enterprise XR innovation.
+</p>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<div class="timeline-year">
+2023 — PRESENT
+</div>
+
+<h3>
+Lead Unity Developer • Tech Mahindra @ EY
+</h3>
+
+<p>
+Leading enterprise XR platforms,
+immersive simulations,
+and scalable multiplayer training systems focused on performance and real-time interaction.
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-year">
+2022 — 2023
+</div>
+
+<h3>
+Senior Software Engineer • Deeploop Technologies
+</h3>
+
+<p>
+Developed enterprise VR applications,
+multiplayer frameworks,
+and immersive real-time platforms.
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-year">
+2018 — 2022
+</div>
+
+<h3>
+Lead Unity Developer • Kaleidozone
+</h3>
+
+<p>
+Led development of VR gaming systems,
+medical simulations,
+free-roam multiplayer experiences,
+and immersive entertainment platforms.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2>
+Let's Build
+The Future
+Of XR
+</h2>
+
+<p>
+Available for Lead Unity Developer,
+XR Engineering,
+Game Development,
+Multiplayer Systems,
+and Enterprise Simulation opportunities worldwide.
+</p>
+
+<div class="hero-buttons" style="justify-content:center;">
+
+<a href="mailto:arivazhagan30071997@gmail.com" class="btn primary">
+Contact Me
+</a>
+
+<a href="https://www.linkedin.com/in/arivazhagan-vr-dev/"
+target="_blank"
+class="btn secondary">
+LinkedIn
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 ARIVAZHAGAN P — XR SYSTEMS ARCHITECT
+</footer>
+
+</body>
+</html>
